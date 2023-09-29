@@ -4,7 +4,7 @@ import { RaceStatusesEnum } from "../enums/race-statuses-enum";
 import { generateRacerWinLikelihoodCalculator } from "../helpers/generate-race-likehood";
 
 export const useRaceList = () => {
-  const { getRacers, racers, setRacers, isLoading } = useGetRacersQuery();
+  const { queryFn, racers, setRacers, isLoading } = useGetRacersQuery();
 
   const [raceStatus, setRaceStatus] = useState<RaceStatusesEnum>(
     RaceStatusesEnum.NOT_YET_RUN
@@ -45,6 +45,19 @@ export const useRaceList = () => {
       });
     });
   };
+
+  const getRacers = () => {
+    setRaceStatus(RaceStatusesEnum.NOT_YET_RUN);
+    queryFn();
+  };
+
+  useEffect(() => {
+    if (racers.length === 0) return setRaceStatus(RaceStatusesEnum.NOT_YET_RUN);
+
+    if (racers.every((racer) => racer.likelihood > 0)) {
+      setRaceStatus(RaceStatusesEnum.ALL_CALCULATED);
+    }
+  }, [racers]);
 
   return {
     orderedRacersByLikehook,

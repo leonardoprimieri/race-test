@@ -1,13 +1,25 @@
 ## How to run the project
 
-### 1. Install dependencies
+### 1. Create a .env file on project root and fill with the following variables
+
+```
+NEXT_PUBLIC_API_URL=your-api-url
+```
+
+### 2. Install dependencies
 
 ```
 yarn
 ```
 
-### 2. Run the project
+### 3. Build the project
 
 ```
-yarn dev
+yarn build
+```
+
+### 4. Run the project
+
+```
+yarn start
 ```

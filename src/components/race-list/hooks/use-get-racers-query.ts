@@ -11,11 +11,11 @@ export const useGetRacersQuery = () => {
   const getRacers = async () => {
     setIsLoading(true);
 
-    const racers = await racersService.getAll();
+    const response = await racersService.getAll();
 
-    setRacers(racers.data.racers);
+    setRacers(response.data.racers);
     setIsLoading(false);
   };
 
-  return { racers, setRacers, getRacers, isLoading };
+  return { racers, setRacers, queryFn: getRacers, isLoading };
 };

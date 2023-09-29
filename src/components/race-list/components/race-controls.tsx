@@ -29,7 +29,8 @@ export const RaceControls = ({
         disabled={
           !racers.length ||
           isLoading ||
-          raceStatus === RaceStatusesEnum.IN_PROGRESS
+          raceStatus === RaceStatusesEnum.IN_PROGRESS ||
+          raceStatus === RaceStatusesEnum.ALL_CALCULATED
         }
         className="bg-blue-600 p-3 text-white rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
         onClick={startRace}
