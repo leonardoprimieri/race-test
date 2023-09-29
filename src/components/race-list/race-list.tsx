@@ -13,9 +13,11 @@ export const RaceList = () => {
 
   return (
     <div className="p-3 flex items-center justify-center flex-col">
+      <h1 className="text-5xl my-6 font-extrabold uppercase">Race App</h1>
+
       {!racers.length && (
         <div className="text-center">
-          <p className="text-md font-bold">No racers yet</p>
+          <p className="text-md font-bold">Get racers to start!</p>
         </div>
       )}
 
