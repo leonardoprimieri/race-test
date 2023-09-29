@@ -1,5 +1,5 @@
 export function generateRacerWinLikelihoodCalculator() {
-  const delay = 2000 + Math.random() * 2000;
+  const delay = 7000 + Math.random() * 7000;
   const likelihoodOfRacerWinning = Math.random();
 
   return (callback: (likelihood: number) => void) => {
