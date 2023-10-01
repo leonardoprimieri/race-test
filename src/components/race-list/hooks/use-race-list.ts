@@ -11,15 +11,14 @@ export const useRaceList = () => {
   );
 
   const orderedRacersByLikehook = () => {
+    if (racers.length === 0) return [];
+
     const orderedRacers = [...racers];
     orderedRacers.sort((a, b) => {
-      if (a.likelihood > b.likelihood) {
-        return -1;
-      }
-      if (a.likelihood < b.likelihood) {
-        return 1;
-      }
-      return 0;
+      if (a.likelihood === undefined) return 1;
+      if (b.likelihood === undefined) return -1;
+
+      return b.likelihood - a.likelihood;
     });
     return orderedRacers;
   };
