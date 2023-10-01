@@ -10,7 +10,7 @@ export const useRaceList = () => {
     RaceStatusesEnum.NOT_YET_RUN
   );
 
-  const orderedRacersByLikehook = () => {
+  const orderedRacersByLikelihood = () => {
     if (racers.length === 0) return [];
 
     const orderedRacers = [...racers];
@@ -59,7 +59,7 @@ export const useRaceList = () => {
   }, [racers]);
 
   return {
-    orderedRacersByLikehook,
+    orderedRacersByLikelihood,
     startRace,
     getRacers,
     raceStatus,

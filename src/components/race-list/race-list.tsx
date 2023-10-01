@@ -4,7 +4,7 @@ import { useRaceList } from "./hooks/use-race-list";
 
 export const RaceList = () => {
   const {
-    orderedRacersByLikehook,
+    orderedRacersByLikelihood,
     startRace,
     getRacers,
     raceStatus,
@@ -31,7 +31,7 @@ export const RaceList = () => {
       )}
 
       <div className="flex flex-wrap items-center justify-center">
-        {orderedRacersByLikehook().map((racer) => (
+        {orderedRacersByLikelihood().map((racer) => (
           <div
             key={racer.name}
             className="flex bg-blue-100 w-64 flex-col h-40 rounded-lg p-2 m-2"
